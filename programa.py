@@ -8,8 +8,8 @@ from tkinter import messagebox
 from pykeepass import PyKeePass
 
 # Datos de configuración de KeePass
-keepass_db_path = 'archivos/contraseñas.kdbx'  # Especifica la ruta de tu base de datos KeePass
-keepass_password = 'j$&DVuqyl6Rlhz#JfVJo'  # La contraseña de tu base de datos KeePass
+keepass_db_path = '[Localización de la Base de datos de Keepass]'  # Especifica la ruta de tu base de datos KeePass
+keepass_password = '[Contraseña de la Base de datos de Keepass]'  # La contraseña de tu base de datos KeePass
 
 # Lista de caracteres posibles para las contraseñas
 caracteres = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()'
