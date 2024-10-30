@@ -1,1 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Generador de Contraseñas</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Generador de Contraseñas</h1>
+        <form method="POST">
+            <label for="longitud"><h4>Introduce el número de caracteres entre (8-30):</h4></label>
+            <input type="number" id="longitud" name="longitud" min="8" max="30" required>
+            <br>
+            <button type="submit">Generar Contraseña</button>
+        </form>
+        {% if password %}
+            <h2 class="success"><b>Contraseña Generada: </b><b class=diferente>{{ password }}</b></h2>
+            <form action="{{ url_for('copiar_password', password=password) }}" method="POST">
+                <label>¿Deseas copiarla?</label>
+                <label for="si">Sí</label> 
+                <input type="radio" id="si" name="usar" value="si" required>
+                <label for="no">No</label>
+                <input type="radio" id="no" name="usar" value="no" required>
+                <br>
+                <p>En caso de que no la vaya a usar rellene el campo con la palabra 'omitir'</p>
+                <input type="text" name="sitio" placeholder="Para qué se usará "required>
+                <br>
+                <button type="submit">Confirmar</button>
+            </form>
+        {% elif error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
 
